@@ -9,10 +9,15 @@ from machine import Pin
 
 
  def start():
+  
      # your custom code goes here. Something like this: ...
      # from main.x import YourProject
      # project = YourProject()
      # ...
+  led = Pin(2, Pin.OUT)
+  while True:
+   led.value(not led.value())
+   time.sleep(0.5)
 
 
  def boot():
@@ -23,8 +28,3 @@ from machine import Pin
  boot()
 
 
-led = Pin(2, Pin.OUT)
-
-while True:
-  led.value(not led.value())
-  time.sleep(0.5)
